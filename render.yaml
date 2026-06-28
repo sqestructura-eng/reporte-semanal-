@@ -1,0 +1,16 @@
+services:
+  - type: worker
+    name: bot-cot-swing-trading
+    runtime: python
+    plan: hobby
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot_cot.py
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_TOKEN
+        sync: false           # Render te pedirá el valor en el dashboard (seguro)
+      - key: CHAT_ID_ALERTAS
+        sync: false           # Igual: lo ingresas manualmente en el dashboard
+      - key: PYTHON_VERSION
+        value: "3.11.0"
