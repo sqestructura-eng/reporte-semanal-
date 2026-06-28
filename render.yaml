@@ -1,5 +1,5 @@
 services:
-  - type: wed
+  - type: web
     name: bot-cot-swing-trading
     runtime: python
     plan: free
